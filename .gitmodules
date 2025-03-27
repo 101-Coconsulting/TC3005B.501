@@ -1,0 +1,6 @@
+[submodule "TC3005B.501-Frontend"]
+	path = TC3005B.501-Frontend
+	url = https://github.com/101-Coconsulting/TC3005B.501-Frontend
+[submodule "TC3005B.501-Backend"]
+	path = TC3005B.501-Backend
+	url = https://github.com/101-Coconsulting/TC3005B.501-Backend
