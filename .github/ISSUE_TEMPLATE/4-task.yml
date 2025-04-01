@@ -1,0 +1,14 @@
+name: Task
+description: A specific piece of work that builds towards a feature. This could be seen as a development teams contribution towards the implementation of a feature.
+title: "[Task]: "
+type: Task
+projects: 101-Coconsulting/1
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: The details of what the task entails. What is required in terms of software.
+      placeholder: New screen which shows a list of all the applications an applicant has both current and past.
+    validations:
+      required: true

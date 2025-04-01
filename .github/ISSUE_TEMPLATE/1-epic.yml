@@ -1,0 +1,13 @@
+name: Epic
+description: Collection of User Stories for an overarching project requirement.
+title: "[EPIC]: "
+projects: 101-Coconsulting/1
+type: Epic
+body:
+- type: input
+  id: epic-name
+  attributes:
+    label: Description
+    description: "Collection of User Stories for an overarching project requirement."
+  validations:
+    required: true

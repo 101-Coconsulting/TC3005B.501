@@ -1,0 +1,19 @@
+name: Sub-Task
+description: A highly specific piece of work that builds towards a task, and that requires to be tracked, discussed, and worked on independently. Probably by a single individual.
+title: "[Sub-Task]: "
+type: Sub-Task
+projects: 101-Coconsulting/1
+body:
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: The details for the sub-task to build-up to the completion of a full task.
+      placeholder: |
+        A Table with the columns to display the relevant data for each application.
+        - Date
+        - Destination
+        - Status
+        ...
+    validations:
+      required: true

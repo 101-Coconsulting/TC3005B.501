@@ -1,0 +1,13 @@
+name: Sub-Epic
+description: Specialized collection of User Stories for related project requirements. (Add as sub-issue of an Epic)
+title: "[Sub-Epic]: "
+type: Sub-Epic
+projects: 101-Coconsulting/1
+body:
+  - type: input 
+    id: description
+    attributes:
+      label: Sub-Epic description.
+      description: Secific functionality that the Sub-Epic adds to the project.
+    validations:
+      required: true
