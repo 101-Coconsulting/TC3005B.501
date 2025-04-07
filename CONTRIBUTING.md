@@ -326,7 +326,7 @@ Once a development branch has been created an is linked to the issue that it's d
 [optional footer(s)]
 ```
 
-The `<type>` cant be one of:
+The `<type>` can be one of:
 
 - `fix`
 - `feat`
