@@ -343,6 +343,8 @@ And the `<description>` must be short and start with lowercase. [Learn more](htt
 
 The nature of a commit should be atomic. That is, that each commit should only encompass a single change to the code. This means that a single commit should have a clear and identifiable purpose, and not cover multiple changes simultaneously. In the future, this will make it easier to understand the commit history, more easily review proposed changes, and also revert any faulty commits and identify problems more easily. [Learn more](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/)
 
+In addition, all commits made to the project must be signed, either with an SSH, or GPG private key linked to the contributor's GitHub account for the commits to be marked as _verified_ and included into the project. [Learn more](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+
 [Back to top &#x21e7;](#contribution-guidelines)
 
 ## 3.3. Pushing changes
