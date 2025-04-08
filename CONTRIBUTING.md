@@ -2,7 +2,10 @@
 
 This is a document to establish the expected contribution workflow for the
 project. It explains how the project is structured at an organization-wide
-level.
+level. The entirety of this project will be handled in English. Both in the
+repositories' issues, PRs and commits, as well as in the code itself through
+comments and any sort of naming utilized for variables, functions, endpoints,
+etc..
 
 ## Table of Contents
 
