@@ -96,7 +96,20 @@ This is a document to establish the expected contribution workflow for the proje
                     <a href=#31-creating-a-feature-branch>3.1. Creating a feature branch</a>
                 </li>
                 <li>
-                    <a href=#32-commiting-changes>3.2. Commiting changes</a>
+                    <details>
+                        <summary><a href=#32-commiting-changes>3.2. Commiting changes</a></summary>
+                        <ul>
+                            <li>
+                                <a href=#321-conventional-commits>3.2.1. Conventional Commits</a>
+                            </li>
+                            <li>
+                                <a href=#322-atomic-commits>3.2.2. Atomic Commits</a>
+                            </li>
+                            <li>
+                                <a href=#323-signed-commits>3.2.3. Signed Commits</a>
+                            </li>
+                        </ul>
+                    </details>
                 </li>
                 <li>
                     <a href=#33-pushing-changes>3.3. Pushing changes</a>
@@ -316,6 +329,10 @@ In order to start working on an issue, first a feature branch must be created fr
 
 ## 3.2. Commiting changes
 
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 3.2.1 Conventional Commits
+
 Once a development branch has been created an is linked to the issue that it's developing, make and commit changes in that feature branch. The commits should follow the conventional commits standard for the commit message structure. It has 3 main parts:
 
 ```
@@ -341,7 +358,15 @@ The `<type>` can be one of:
 
 And the `<description>` must be short and start with lowercase. [Learn more](https://www.conventionalcommits.org/en/v1.0.0/)
 
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 3.2.2. Atomic Commits
+
 The nature of a commit should be atomic. That is, that each commit should only encompass a single change to the code. This means that a single commit should have a clear and identifiable purpose, and not cover multiple changes simultaneously. In the future, this will make it easier to understand the commit history, more easily review proposed changes, and also revert any faulty commits and identify problems more easily. [Learn more](https://github.blog/developer-skills/github/write-better-commits-build-better-projects/)
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 3.2.3. Signed Commits
 
 In addition, all commits made to the project must be signed, either with an SSH, or GPG private key linked to the contributor's GitHub account for the commits to be marked as _verified_ and included into the project. [Learn more](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 
