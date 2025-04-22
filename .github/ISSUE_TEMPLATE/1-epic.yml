@@ -2,7 +2,7 @@ name: Epic
 description: Collection of User Stories for an overarching project requirement.
 title: "[EPIC]: "
 projects: 101-Coconsulting/1
-type: Epic
+type: 1-Epic
 body:
 - type: input
   id: epic-name
