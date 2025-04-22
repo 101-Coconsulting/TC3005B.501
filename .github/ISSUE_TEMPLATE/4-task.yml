@@ -1,7 +1,7 @@
 name: Task
 description: A specific piece of work that builds towards a feature. This could be seen as a development teams contribution towards the implementation of a feature.
 title: "[Task]: "
-type: Task
+type: 4-Task
 projects: 101-Coconsulting/1
 body:
   - type: textarea

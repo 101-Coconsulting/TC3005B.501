@@ -1,7 +1,7 @@
 name: User Story
 description: Specific User Story for feature requests from the client.
 title: "[US]: "
-type: User Story
+type: 3-User Story
 projects: 101-Coconsulting/1
 body:
   - type: markdown
