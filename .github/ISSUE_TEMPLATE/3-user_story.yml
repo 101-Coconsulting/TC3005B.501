@@ -17,6 +17,7 @@ body:
       label: As a
       description: Role which is intrested in the user story
       options:
+        - Administrator
         - Applicant
         - Authorizer
         - Accounts Payable
