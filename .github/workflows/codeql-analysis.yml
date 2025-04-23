@@ -29,14 +29,14 @@ jobs:
         submodules: 'recursive'
 
     # Step 2: Install dependencies of submodule 1
-    - name: Install dependencies for Submodule 1
-      working-directory: submodule1
+    - name: Install dependencies for Backend
+      working-directory: TC3005B.501-Backend
       run: npm install
 
     # Step 3: Install dependencies of submodule 2
-    - name: Install dependencies for Submodule 2
-      working-directory: submodule2
-      run: npm install
+    - name: Install dependencies for Frontend
+      working-directory: TC3005B.501-Frontend
+      run: npm install 
 
   analyze_codeql:
     name: Analyze code
