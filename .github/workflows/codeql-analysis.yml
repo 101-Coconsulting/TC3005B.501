@@ -1,0 +1,41 @@
+name: "CodeQL Analysis - Main Repository"
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - main
+      - development
+  schedule:
+    - cron: '0 2 * * 0' # Runs every Sunday at 2 am
+
+permissions:
+  security-events: write
+  packages: read
+
+jobs:
+  analyze:
+    name: Analyze code
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Download the code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 3: Initialize CodeQL
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: typescript, javascript
+        config-file: .github/codeql/codeql-config.yml
+
+    # Step 4: Run CodeQL Analysis
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
