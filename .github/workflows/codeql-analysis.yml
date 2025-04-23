@@ -12,24 +12,43 @@ on:
     - cron: '0 2 * * 0' # Runs every Sunday at 2 am
 
 permissions:
+  contents: write
   security-events: write
   packages: read
 
 jobs:
-  analyze:
-    name: Analyze code
+  checkout-submodules:
+    name: Checkout Submodules
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Download the code
+    # Step 1: Clone main repository with submodules
+    - name: Checkout main repository and submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+
+    # Step 2: Install dependencies of submodule 1
+    - name: Install dependencies for Submodule 1
+      working-directory: submodule1
+      run: npm install
+
+    # Step 3: Install dependencies of submodule 2
+    - name: Install dependencies for Submodule 2
+      working-directory: submodule2
+      run: npm install
+
+  analyze_codeql:
+    name: Analyze code
+    runs-on: ubuntu-latest
+    needs: checkout-submodules
+
+    steps:
+    # Step 1: Clone main repository
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Install dependencies
-    - name: Install dependencies
-      run: npm install
-
-    # Step 3: Initialize CodeQL
+    # Step 2: Initialize CodeQL
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
