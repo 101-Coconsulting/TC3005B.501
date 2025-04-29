@@ -1,5 +1,5 @@
 ---
-name: Lint
+name: Format PR
 
 on: # yamllint disable-line rule:truthy
   push: null
