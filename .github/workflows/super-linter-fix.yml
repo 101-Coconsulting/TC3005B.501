@@ -1,5 +1,5 @@
 ---
-name: Lint
+name: Format PR
 
 on: # yamllint disable-line rule:truthy
   push: null
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  lint:
+  #lint:
     # Super-linter workflow running in check only mode
     # See https://github.com/super-linter/super-linter#get-started
 
