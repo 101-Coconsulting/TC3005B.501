@@ -9,10 +9,24 @@ permissions:
   contents: read
 
 jobs:
-  #lint:
+  lint:
     # Super-linter workflow running in check only mode
     # See https://github.com/super-linter/super-linter#get-started
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # Full git history is needed to get a proper list of changed files within `super-linter`
+          fetch-depth: 0
 
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: "main"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
   fix-lint-issues:
     permissions:
       # To write linting fixes
