@@ -1,10 +1,13 @@
 # TC3005B.501
 
-Web portal for companies to have a flow of travel applications by employees who require some sort of support from the company. Be it a reimbursement, advancement, hotel and/or flight reservations.
+Web portal for companies to have a flow of travel applications by employees
+who require some sort of support from the company. Be it a reimbursement,
+advancement, hotel and/or flight reservations.
 
 ## Process State Diagram
 
-The process of processing a travel request application is represented by the following state diagram from start to finish:
+The process of processing a travel request application is represented by the
+following state diagram from start to finish:
 
 ```mermaid
 stateDiagram
