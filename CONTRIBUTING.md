@@ -217,7 +217,7 @@ Issue Types allow an organization to better manage the different nature of the v
 - Project Managers (PM)s and Lead Architects (LA)s.
     - Epics
     - Sub-Epics
-- Team-Leads and Repo Maintainers
+- Team-Leads and Repository Maintainers
     - User Stories
 - Anyone
     - Tasks
@@ -401,13 +401,13 @@ GitHub consideres releases to be a specific version of the repository marked by 
 
 ### 4.2.3. Semantic Versioning
 
-Any release implies a new software version, and it **must** utilize semantic versioning (semver), which has the format `MAJOR.MINOR.PATCH`. And the new version of any release is determined by the highest order of change introduced. So a release that introduces `MINOR` and `PATCH` changes, should be considered a new `MINOR` version. And the `MAJOR`, `MINOR` and `PATCH` are determined by the types of commits the release introduces.
+Any release implies a new software version, and it **must** utilize semantic versioning (SemVer), which has the format `MAJOR.MINOR.PATCH`. And the new version of any release is determined by the highest order of change introduced. So a release that introduces `MINOR` and `PATCH` changes, should be considered a new `MINOR` version. And the `MAJOR`, `MINOR` and `PATCH` are determined by the types of commits the release introduces.
 
 - `MAJOR` to any commit type with `!` and `BREAKING CHANGES` footer.
 - `MINOR` to any `feat` commit type.
 - `PATCH` to any `fix` commit type.
 
-Due to the project's development being comprised as mostly it being in a pre-release state, with the final project objective being a `1.0.0` version, all versions prior to the finish of the project should be considered `0.x.z`, starting with `0.1.0`. This means that `MINOR` and `PATCH` versions are the only types of versions that should be considered. Since `MAJOR` or `BREAKING CHANGES` apply once a stable release has been established. Hence any sort of Pre-Release `MAJOR` change should instead be treated as a `MINOR` change for semantic versioning. [Learn more](https://semver.org/)
+Due to the project's development being comprised as mostly it being in a prerelease state, with the final project objective being a `1.0.0` version, all versions prior to the finish of the project should be considered `0.x.z`, starting with `0.1.0`. This means that `MINOR` and `PATCH` versions are the only types of versions that should be considered. Since `MAJOR` or `BREAKING CHANGES` apply once a stable release has been established. Hence any sort of prerelease `MAJOR` change should instead be treated as a `MINOR` change for semantic versioning. [Learn more](https://SemVer.org/)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
