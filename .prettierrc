@@ -1,0 +1,7 @@
+{
+  "tabWidth": 4,
+  "useTabs": false,
+  "proseWrap": "preserve",
+  "printWidth": 80,
+  "endOfLine": "lf"
+}
