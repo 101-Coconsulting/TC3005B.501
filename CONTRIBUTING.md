@@ -318,7 +318,7 @@ In order to start working on an issue, first a feature branch must be created fr
 
 Once a development branch has been created an is linked to the issue that it's developing, make and commit changes in that feature branch. The commits should follow the conventional commits standard for the commit message structure. It has 3 main parts:
 
-```
+```git
 <type>[optional scope]: <description>
 
 [optional body]
