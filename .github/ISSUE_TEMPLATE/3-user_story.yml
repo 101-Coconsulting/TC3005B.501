@@ -6,11 +6,13 @@ projects: 101-Coconsulting/1
 body:
     - type: markdown
       attributes:
-          value: |
-              A good User Story follows the Role-Feature-Benefit pattern:
-              As a [ type of user ], I want [ an action ], so that [ some reason ].
-              And **must** include Acceptance Criteria. These define when the User Story is marked as done, so they must be tested.
-              The Acceptance Criteria for the User Story should be translated into Tasks, which should be created as separate sub-issues.
+          value: "A good User Story follows the Role-Feature-Benefit pattern:\n
+              As a [ type of user ], I want [ an action ], so that\
+              [ some reason ].\n
+              And **must** include Acceptance Criteria. These define when the\
+              User Story is marked as done, so they must be tested.\n
+              The Acceptance Criteria for the User Story should be translated\
+              into Tasks, which should be created as separate sub-issues."
     - type: dropdown
       id: role
       attributes:
@@ -45,11 +47,14 @@ body:
       id: acceptance-criteria
       attributes:
           label: Acceptance Criteria
-          description: The conditions required for the User Story to be considered done and ready for release.
-          placeholder: |
-              - An applicant can visualize their current applications.
-              - An applicant can visualize their past applications.
-              - An applicant can visualize the date, destination, and status of current and past applications.
-              ...
+          description: >
+              The conditions required for the User Story to be considered done
+              and ready for release.
+          placeholder: "\
+              - An applicant can visualize their current applications.\n
+              - An applicant can visualize their past applications.\n
+              - An applicant can visualize the date, destination, and status\
+              of current and past applications.\n
+              ..."
       validations:
           required: true

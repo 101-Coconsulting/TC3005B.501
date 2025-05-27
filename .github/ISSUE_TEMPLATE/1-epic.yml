@@ -8,6 +8,7 @@ body:
       id: epic-name
       attributes:
           label: Description
-          description: "Collection of User Stories for an overarching project requirement."
+          description: >
+              Collection of User Stories for an overarching project requirement.
       validations:
           required: true
