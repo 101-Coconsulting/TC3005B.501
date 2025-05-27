@@ -20,8 +20,8 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
               with:
-                  # Full git history is needed to get a proper list of changed files
-                  # within `super-linter`
+                  # Full git history is needed to get a proper list of changed
+                  # files within `super-linter`
                   fetch-depth: 0
 
             - name: Lint Code Base
@@ -66,8 +66,8 @@ jobs:
                   FIX_TYPESCRIPT_PRETTIER: true
                   FIX_YAML_PRETTIER: true
                   FILTER_EXCLUDE_REGEX: ^.github/workflows/
-                  # To reuse the same Super-linter configuration that you use in the
-                  # lint job without duplicating it, see
+                  # To reuse the same Super-linter configuration that you use
+                  # in the lint job without duplicating it, see
                   # https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md#share-environment-variables-between-environments
             - name: Commit and push linting fixes
               # Run only on:
