@@ -3,7 +3,7 @@
                                READ BEFORE SUBMITTING
 ################################################################################
 
-This is a PR template which comprehends 3 different types of PR: 
+This is a PR template which comprehends 3 different types of PR:
 
 1. Chore PR
 2. Feature PR
@@ -29,6 +29,7 @@ is.
                               CHORE PR TEMPLATE START
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -->
+
 # Chore PR
 
 ## Before Submitting
@@ -59,6 +60,7 @@ merged._
 
 _List affected issues which would require merging from `development` once this
 PR is merged._
+
 <!--
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                               CHORE PR TEMPLATE END
@@ -70,6 +72,7 @@ PR is merged._
                             FEATURE PR TEMPLATE START
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -->
+
 # Feature PR
 
 ## Before Submitting
@@ -93,6 +96,7 @@ merged._
 
 _List affected issues which would require merging from `development` once this
 PR is merged._
+
 <!--
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                               FEATURE PR TEMPLATE END
@@ -104,6 +108,7 @@ PR is merged._
                             RELEASE PR TEMPLATE START
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 -->
+
 # Release PR
 
 ## Before Submitting
@@ -126,6 +131,7 @@ _Outline what this new version will introduce and the changes it will make._
 
 _List the related User Stories, Sub-Epics, and Epics that the Release advances
 or deals with._
+
 <!--
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
                               RELEASE PR TEMPLATE END

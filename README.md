@@ -50,7 +50,7 @@ stateDiagram
   state accounts_payable_reviews <<choice>>
   Voucher_Verification --> accounts_payable_reviews: Accounts Payable Reviews
   accounts_payable_reviews --> Finalized: Approved
-  accounts_payable_reviews --> Trip_Expenses_Verification: Rejected 
+  accounts_payable_reviews --> Trip_Expenses_Verification: Rejected
 
   Finalized --> [*]
   Rejected --> [*]

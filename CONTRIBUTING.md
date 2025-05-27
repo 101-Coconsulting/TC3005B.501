@@ -291,7 +291,7 @@ related to the project.
 
 1. Epic: Collection of User Stories for an overarching project requirement.
 2. Sub-Epic: Specialized collection of User Stories for related project
-requirements.
+   requirements.
 3. User Story: A feature, request, idea or new functionality.
 4. Task: A specific piece of work.
 5. Sub-Task: A highly specific piece of work that builds towards a task.
@@ -661,7 +661,7 @@ specific feature which is not working properly should be addressed by:
 
 1. Reverting the merge commit made to `development`.
 2. Reopening the issue with a description of what was found to be
-malfunctioning.
+   malfunctioning.
 3. Fixing the issue.
 4. Reintegrating the issue into `development`.
 

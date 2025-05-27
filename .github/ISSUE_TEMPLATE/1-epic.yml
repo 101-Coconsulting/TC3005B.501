@@ -4,10 +4,10 @@ title: "[EPIC]: "
 projects: 101-Coconsulting/1
 type: 1-Epic
 body:
-- type: input
-  id: epic-name
-  attributes:
-    label: Description
-    description: "Collection of User Stories for an overarching project requirement."
-  validations:
-    required: true
+    - type: input
+      id: epic-name
+      attributes:
+          label: Description
+          description: "Collection of User Stories for an overarching project requirement."
+      validations:
+          required: true

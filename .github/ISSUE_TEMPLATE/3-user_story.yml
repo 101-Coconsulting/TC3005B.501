@@ -4,53 +4,52 @@ title: "[US]: "
 type: 3-User Story
 projects: 101-Coconsulting/1
 body:
-  - type: markdown
-    attributes:
-      value: |
-        A good User Story follows the Role-Feature-Benefit pattern:
-        As a [ type of user ], I want [ an action ], so that [ some reason ].
-        And **must** include Acceptance Criteria. These define when the User Story is marked as done, so they must be tested.
-        The Acceptance Criteria for the User Story should be translated into Tasks, which should be created as separate sub-issues.
-  - type: dropdown
-    id: role
-    attributes:
-      label: As a
-      description: Role which is intrested in the user story
-      options:
-        - Administrator
-        - Applicant
-        - Authorizer
-        - Accounts Payable
-        - Travel Agent
-        - Checker
-    validations:
-      required: true
-  - type: input
-    id: feature
-    attributes:
-      label: I want
-      description: The feature the User wants as part of the software.
-      placeholder: to see my history of travel applications
-    validations:
-      required: true
-  - type: input
-    id: purpose
-    attributes:
-      label: So that
-      description: The benefit the feature the User is requesting provides.
-      placeholder: I can more easily keep a record of my applications.
-    validations:
-      required: true
-  - type: textarea
-    id: acceptance-criteria
-    attributes:
-      label: Acceptance Criteria
-      description: The conditions required for the User Story to be considered done and ready for release.
-      placeholder: |
-        - An applicant can visualize their current applications.
-        - An applicant can visualize their past applications.
-        - An applicant can visualize the date, destination, and status of current and past applications.
-        ...
-    validations:
-      required: true
-    
+    - type: markdown
+      attributes:
+          value: |
+              A good User Story follows the Role-Feature-Benefit pattern:
+              As a [ type of user ], I want [ an action ], so that [ some reason ].
+              And **must** include Acceptance Criteria. These define when the User Story is marked as done, so they must be tested.
+              The Acceptance Criteria for the User Story should be translated into Tasks, which should be created as separate sub-issues.
+    - type: dropdown
+      id: role
+      attributes:
+          label: As a
+          description: Role which is intrested in the user story
+          options:
+              - Administrator
+              - Applicant
+              - Authorizer
+              - Accounts Payable
+              - Travel Agent
+              - Checker
+      validations:
+          required: true
+    - type: input
+      id: feature
+      attributes:
+          label: I want
+          description: The feature the User wants as part of the software.
+          placeholder: to see my history of travel applications
+      validations:
+          required: true
+    - type: input
+      id: purpose
+      attributes:
+          label: So that
+          description: The benefit the feature the User is requesting provides.
+          placeholder: I can more easily keep a record of my applications.
+      validations:
+          required: true
+    - type: textarea
+      id: acceptance-criteria
+      attributes:
+          label: Acceptance Criteria
+          description: The conditions required for the User Story to be considered done and ready for release.
+          placeholder: |
+              - An applicant can visualize their current applications.
+              - An applicant can visualize their past applications.
+              - An applicant can visualize the date, destination, and status of current and past applications.
+              ...
+      validations:
+          required: true
