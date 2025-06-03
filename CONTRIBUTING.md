@@ -312,6 +312,11 @@ etc..
             </ul>
         </details>
     </li>
+    <li>
+        <a href=#7-issue-tracking-and-closing>
+            7. Issue Tracking and Closing
+        </a>
+    </li>
 </ul>
 
 ## 1. Working with Issues
