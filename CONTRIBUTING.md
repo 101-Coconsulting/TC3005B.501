@@ -443,32 +443,42 @@ and eventual inclusion in a release.
 
 ### 2.2. Create PR
 
-Create a PR to the `development` branch, add the appropriate labels, assign
-the people responsible for merging the PR, and assign the people responsible
-for reviewing the changes proposed. In the description, explain what the
-changes you made add to the project, how they change the behaviour of the
-software, the rationale behind it, and what Task or Sub-Task it aims to
-resolve. It is very important that the Task or Sub-Task is also linked to the
-PR using GitHub, but should be done automatically if the branch was created
-from a particular issue in the first place.
+1. Create a PR to the `development` branch
+2. Add the appropriate labels
+3. Assign the people responsible for merging the PR
+4. Assign the people responsible for reviewing the changes proposed.
+5. In the description, explain:
+    - What the changes you made add to the project
+    - How they change the behaviour of the software
+    - The rationale behind it
+    - What Task or Sub-Task it aims to resolve.
+6. Ensure the PR is linked to its corresponding Task or Sub-Task.
+    (This should be done automatically if the branch was created from a
+    particular issue in the first place.)
 [Learn more](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
 ### 2.3. Reviewing PRs
 
-Once the PR is created, the QA team will review the changes proposed, ensure
-that they do indeed build towards the intended feature, approve the changes
-and add a comment explaining that the changes provided do indeed contribute
-towards the development of the project. If, on the other hand, there are any
-comments to be made, which would usually be questions the reviewer has on the
-changes that require clarification, they can add comments both to the PR as a
-whole, and to individual lines or files. Comments are intended to mark that
+Once the PR is created, the QA team will:
+
+1. Review the changes proposed
+2. Ensure that they do indeed build towards the intended feature
+3. Leave a review on the PR to either:
+    - **Approve** the changes and add a comment explaining that the changes
+        provided do indeed contribute towards the development of the project.
+    - **Comment** on the PR regarding questions they may have regarding the PR.
+    - **Request Changes** directly stating what needs to be changed for the PR
+        to be approved.
+
+When commenting or requesting changes after a review, reviewers can add
+comments to individual lines or files. Comments are intended to mark that
 something needs attention. So they mustn't be used to say that something works
 as intended. Additionally, reviewers can even suggest changes while adding
 comments to individual lines. These suggested changes can even be applied
-directly on GitHub by the PR owner with a new commit, and added to modify the
-PR. [Learn more](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+directly on GitHub in a new commit.
+[Learn more](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -561,10 +571,11 @@ commits to be marked as _verified_ and included into the project.
 Once a set of commits are ready to be worked on by someone else, or can be
 considered a complete piece of work, they can be pushed to the remote
 repository. There is no need to be pushing every single commit to the remote
-if the commits are considered to be work in progress (WIP). Pushed commits
-**must** have the correct conventional commit format, and be organized in such
-a manner that later review process, integration, and possible revertion and bug
-fixing can be easily done by looking at the commit history.
+if the commits are considered to be work in progress (WIP).
+
+Pushed commits **must** have the correct conventional commit format, and be
+organized in such a manner that later review process, integration, and possible
+revertion and bug fixing can be easily done by looking at the commit history.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -573,12 +584,16 @@ fixing can be easily done by looking at the commit history.
 Feature branches should always have a single owner. This means that only a
 single person should be working in a determined feature at any point. This
 prevents any sort of conflicts from emerging between the local and remote
-feature branches. And feature branches should always be developed
-independently from the `development` branch. And only pull changes from it if
-they directly affect the development of said feature. There is no need to be
-constantly updating the branch to be in sync with `development`. Only when
-required to make development adjustments or once the development is finished
-and there are any conflicts that need to be fixed.
+feature branches.
+
+Feature branches should always be developed independently from the
+`development` branch, and only pull changes from it if they directly affect the
+development of said feature, as signaled in a corresponding PR previously
+merged to `development` which links this feature as an affected issue.
+
+There is no need to be constantly updating the branch to be in sync with
+`development`. Only when required to make development adjustments or once the
+development is finished and there are any conflicts that need to be fixed.
 [Learn more](https://git-scm.com/docs/gitworkflows#_topic_branches)
 
 [Back to top &#x21e7;](#contribution-guidelines)
@@ -624,14 +639,16 @@ the whole system is tested.
 #### 4.2.1. Milestones
 
 GitHub allows the control and planning of new releases utilizing milestones,
-which outline the description of the new release, the deadline for its release
-, and the scope of the release by linking related issues for its completion.
+which outline the description of the new release, the deadline for its release,
+and the scope of the release by linking related issues for its completion.
+
 They allow for better project management by setting progress markers for the
 project, and tracking progress towards any given milestones by comparing the
-number of finished and unfinished issues the milestone has, by assuming that
-all issues are the same size. Adding or removing issues is allowed, and a
-milestone can be considered complete once 100% of the issues assigned to said
-milestone have been completed.
+number of finished and unfinished issues the milestone has, assuming that all
+issues are the same size.
+
+Adding or removing issues is allowed, and a milestone can be considered
+complete once 100% of the issues assigned to said milestone have been completed.
 [Learn more](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones)
 
 [Back to top &#x21e7;](#contribution-guidelines)
@@ -649,10 +666,11 @@ and contain the software version related to that specific release.
 
 Any release implies a new software version, and it **must** utilize semantic
 versioning (SemVer), which has the format `MAJOR.MINOR.PATCH`. And the new
-version of any release is determined by the highest order of change introduced
-. So a release that introduces `MINOR` and `PATCH` changes, should be
-considered a new `MINOR` version. And the `MAJOR`, `MINOR` and `PATCH` are
-determined by the types of commits the release introduces.
+version of any release is determined by the highest order of change introduced.
+
+So a release that introduces `MINOR` and `PATCH` changes should be considered a
+new `MINOR` version. And the `MAJOR`, `MINOR` and `PATCH` are determined by the
+types of commits the release introduces.
 
 - `MAJOR` to any commit type with `!` and `BREAKING CHANGES` footer.
 - `MINOR` to any `feat` commit type.
@@ -661,11 +679,13 @@ determined by the types of commits the release introduces.
 Due to the project's development being comprised as mostly it being in a
 prerelease state, with the final project objective being a `1.0.0` version,
 all versions prior to the finish of the project should be considered `0.x.z`,
-starting with `0.1.0`. This means that `MINOR` and `PATCH` versions are the
-only types of versions that should be considered. Since `MAJOR` or `BREAKING
-CHANGES` apply once a stable release has been established. Hence any sort of
-prerelease `MAJOR` change should instead be treated as a `MINOR` change for
-semantic versioning. [Learn more](https://SemVer.org/)
+starting with `0.1.0`.
+
+This means that `MINOR` and `PATCH` versions are the only types of versions
+that should be considered. Since `MAJOR` or `BREAKING CHANGES` apply once a
+stable release has been established. Hence any sort of prerelease `MAJOR`
+change should instead be treated as a `MINOR` change for semantic versioning.
+[Learn more](https://SemVer.org/)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -686,11 +706,12 @@ also include an update to a `CHANGELOG` file [Learn more](https://keepachangelog
 
 Once the release has been apropriately reviewed and approved, it should be
 merged into the `main` branch utilizing the merge method, which creates a
-merge commit with the information of the release's PR. This means that the
-history of the `main` branch will mainly only contain the merge commits as
-first parents. However, still contain all of the commit history carried over
-from `development`. Which keeps the commit history complete but also clean when
-analyzed on a first-parent basis.
+merge commit with the information of the release's PR.
+
+This means that the history of the `main` branch will mainly only contain the
+merge commits as first parents. However, still contain all of the commit
+history carried over from `development`. Which keeps the commit history
+complete but also clean when analyzed on a first-parent basis.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -723,9 +744,12 @@ If something is still in `development` and doesn't work properly, that
 specific feature which is not working properly should be addressed by:
 
 1. Reverting the merge commit made to `development`.
+
 2. Reopening the issue with a description of what was found to be
    malfunctioning.
+
 3. Fixing the issue.
+
 4. Reintegrating the issue into `development`.
 
 [Back to top &#x21e7;](#contribution-guidelines)
@@ -777,12 +801,12 @@ whole has been evolving. Keep in mind the following things:
 
 With the following types of changes:
 
-- `Added` for new features.
-- `Changed` for changes in existing functionality.
-- `Deprecated` for soon-to-be removed features.
-- `Removed` for now removed features.
-- `Fixed` for any bugfixes.
-- `Security` in case of vulnerabilities.
+1. `Security` in case of vulnerabilities.
+2. `Removed` for now removed features.
+3. `Deprecated` for soon-to-be removed features.
+4. `Added` for new features.
+5. `Changed` for changes in existing functionality.
+6. `Fixed` for any bugfixes.
 
 Keeping an `Unreleased` section at the top to track upcoming changes is
 preferable for maintaining the `CHANGELOG` file.
