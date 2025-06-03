@@ -453,9 +453,9 @@ and eventual inclusion in a release.
     - The rationale behind it
     - What Task or Sub-Task it aims to resolve.
 6. Ensure the PR is linked to its corresponding Task or Sub-Task.
-    (This should be done automatically if the branch was created from a
-    particular issue in the first place.)
-[Learn more](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
+   (This should be done automatically if the branch was created from a
+   particular issue in the first place.)
+   [Learn more](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -467,10 +467,10 @@ Once the PR is created, the QA team will:
 2. Ensure that they do indeed build towards the intended feature
 3. Leave a review on the PR to either:
     - **Approve** the changes and add a comment explaining that the changes
-        provided do indeed contribute towards the development of the project.
+      provided do indeed contribute towards the development of the project.
     - **Comment** on the PR regarding questions they may have regarding the PR.
     - **Request Changes** directly stating what needs to be changed for the PR
-        to be approved.
+      to be approved.
 
 When commenting or requesting changes after a review, reviewers can add
 comments to individual lines or files. Comments are intended to mark that
@@ -512,9 +512,9 @@ depends on the type of issue that it aims to address:
 
 - **Task Issue**: base branch is `development`.
 - **Sub-Task Issue**: base branch is the corresponding and pre-existing
-    `[ issue number ]-task-[ task title]` parent task issue branch.
+  `[ issue number ]-task-[ task title]` parent task issue branch.
 - **Chore**: base branch is either `main` or `development`, depending on the
-    nature of the chore.
+  nature of the chore.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
