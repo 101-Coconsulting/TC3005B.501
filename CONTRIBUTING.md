@@ -128,8 +128,8 @@ etc..
     <li>
         <details open>
             <summary>
-                <a href=#3-feature-workflow>
-                    3. Feature Workflow
+                <a href=#3-github-workflow>
+                    3. GitHub Workflow
                 </a>
             </summary>
             <ul>
@@ -180,8 +180,8 @@ etc..
                     </a>
                 </li>
                 <li>
-                    <a href=#36-PR-to-development>
-                        3.6. PR to `development`
+                    <a href=#36-PR-to-base-branch>
+                        3.6. PR to base branch
                     </a>
                 </li>
             </ul>
@@ -491,7 +491,7 @@ is marked as complete, and the feature branch is deleted.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
-## 3. Feature Workflow
+## 3. GitHub Workflow
 
 The project will follow GitHub Flow for its feature development.
 [Learn more](https://docs.github.com/en/get-started/using-github/github-flow)
@@ -501,10 +501,20 @@ The project will follow GitHub Flow for its feature development.
 ### 3.1. Creating a feature branch
 
 In order to start working on an issue, first a feature branch must be created
-from `development`, and be linked to said issue. These should be created using
-GitHub (or `gh` CLI) for the default name to be used:
+dedicated exclusively to addressing that specific issue. These should be
+created using GitHub (or `gh` CLI) for the default name to be used:
 `[ issue number ]-[ issue title ]`. This automatically links the branch to said
-issue and it makes it clear that that issue is actively being worked on.
+issue and it makes it clear that that issue is actively being worked on, even
+if no PR exists yet.
+
+The base branch (the branch from which it is created) for the feature branch
+depends on the type of issue that it aims to address:
+
+- **Task Issue**: base branch is `development`.
+- **Sub-Task Issue**: base branch is the corresponding and pre-existing
+    `[ issue number ]-task-[ task title]` parent task issue branch.
+- **Chore**: base branch is either `main` or `development`, depending on the
+    nature of the chore.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -586,32 +596,36 @@ single person should be working in a determined feature at any point. This
 prevents any sort of conflicts from emerging between the local and remote
 feature branches.
 
-Feature branches should always be developed independently from the
-`development` branch, and only pull changes from it if they directly affect the
-development of said feature, as signaled in a corresponding PR previously
-merged to `development` which links this feature as an affected issue.
+Feature branches should always be developed independently from its
+corresponding base branch (see [Section 3.1](#31-creating-a-feature-branch))
+and only pull changes from it if they directly affect the development of said
+feature, as signaled in a corresponding PR previously merged to said base
+branch which links this feature as an affected issue.
 
 There is no need to be constantly updating the branch to be in sync with
-`development`. Only when required to make development adjustments or once the
-development is finished and there are any conflicts that need to be fixed.
+its corresponding base branch
+(see [Section 3.1](#31-creating-a-feature-branch)). Only when required to make
+development adjustments or once the development is finished and there are any
+conflicts that need to be fixed.
 [Learn more](https://git-scm.com/docs/gitworkflows#_topic_branches)
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
 ### 3.5. Test locally
 
-Before requesting to pull any changes worked on for the feature into the
-`development` branch, ensure to add needed unitary and integration tests as
-required to identify any bugs or malfuctions in the code on its own without
-having to test the entire application as a whole as part of the QA workflow.
+Before requesting to pull any changes worked on for the feature into its
+corresponding base branch (see [Section 3.1](#31-creating-a-feature-branch)),
+make sure to add unitary and integration tests as required to identify any bugs
+or malfuctions in the feature's code without having to test the entire
+application as a whole as part of the QA workflow.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
-### 3.6. PR to `development`
+### 3.6. PR to base branch
 
 Once a feature has been thoroughly tested locally, a PR can be created into
-the `development` branch to integrate the feature to the current batch of
-features in testing.
+its corresponding base branch (see [Section 3.1](#31-creating-a-feature-branch))
+to integrate the feature to the current batch of features in testing.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
