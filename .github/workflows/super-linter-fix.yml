@@ -1,0 +1,85 @@
+---
+name: Format PR
+
+on: # yamllint disable-line rule:truthy
+    push: null
+    pull_request:
+        branches:
+            - main
+            - development
+
+permissions:
+    contents: read
+
+jobs:
+    lint:
+        # Super-linter workflow running in check only mode
+        # See https://github.com/super-linter/super-linter#get-started
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  # Full git history is needed to get a proper list of changed
+                  # files within `super-linter`
+                  fetch-depth: 0
+
+            - name: Lint Code Base
+              uses: github/super-linter@v4
+              env:
+                  VALIDATE_ALL_CODEBASE: true
+                  DEFAULT_BRANCH: "main"
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    fix-lint-issues:
+        if: ${{
+            github.event.pull_request.head.ref
+            || github.head_ref
+            || github.ref
+            }}
+        permissions:
+            # To write linting fixes
+            contents: write
+            # To write Super-linter status checks
+            statuses: write
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+            - name: Super-Linter
+              uses: super-linter/super-linter@v7.3.0 # x-release-please-version
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  VALIDATE_ALL_CODEBASE: true
+                  # Set your fix mode variables to true
+                  FIX_CSS_PRETTIER: true
+                  FIX_ENV: true
+                  FIX_HTML_PRETTIER: true
+                  FIX_JAVASCRIPT_PRETTIER: true
+                  FIX_JSON_PRETTIER: true
+                  FIX_JSX_PRETTIER: true
+                  FIX_MARKDOWN_PRETTIER: true
+                  FIX_MARKDOWN: true
+                  FIX_SQLFLUFF: true
+                  FIX_TSX: true
+                  FIX_TYPESCRIPT_PRETTIER: true
+                  FIX_YAML_PRETTIER: true
+                  FILTER_EXCLUDE_REGEX: ^.github/workflows/
+                  # To reuse the same Super-linter configuration that you use
+                  # in the lint job without duplicating it, see
+                  # https://github.com/super-linter/super-linter/blob/main/docs/run-linter-locally.md#share-environment-variables-between-environments
+            - name: Commit and push linting fixes
+              # Run only on:
+              # - Pull requests
+              # - Not on the default branch
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  branch: ${{
+                      github.event.pull_request.head.ref
+                      || github.head_ref
+                      || github.ref
+                      }}
+                  commit_message: "chore: fix linting issues"
+                  commit_user_name: super-linter
+                  commit_user_email: super-linter@super-linter.dev
