@@ -281,6 +281,32 @@ etc..
             </ul>
         </details>
     </li>
+    <li>
+        <details open>
+            <summary>
+                <a href=#6-documentation>
+                    6. Documentation
+                </a>
+            </summary>
+            <ul>
+                <li>
+                    <a href=#61-code-style-and-documentation>
+                        6.1. Code Style and Documentation
+                    </a>
+                </li>
+                <li>
+                    <a href=#62-changelog>
+                        6.2. CHANGELOG
+                    </a>
+                </li>
+                <li>
+                    <a href=#63-github-wiki>
+                        6.3. GitHub Wiki
+                    </a>
+                </li>
+            </ul>
+        </details>
+    </li>
 </ul>
 
 ## 1. Working with Issues
@@ -718,5 +744,76 @@ Beyond this, any sort of appreciated information could perhaps be:
 
 And any sorf of information that would aid the developers error guessing what
 is wrong.
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+## 6. Documentation
+
+This section will outline the project documentation requirements not related to
+code specifics, but rather to the documentation of the project as a whole.
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 6.1. Code Style and Documentation
+
+Code style guidelines and code documentation guidelines should be defined in
+separate and dedicated `CONTRIBUTING` files in each repository, dealing with
+the specific code format requirements, and code documentation specifications.
+These could be located both at the root of the repository, as well as in a
+`docs` directory at the root of the repository, if preferred.
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 6.2. CHANGELOG
+
+A `CHANGELOG` file should be kept to which outlines the changes being made from
+each release. These files are repository-wide, but a project-wide `CHANGELOG`
+file should also be kept in the main repository to outline how the Project as a
+whole has been evolving. Keep in mind the following things:
+
+- It should be human-readable
+- There should be an entry for each release version.
+
+With the following types of changes:
+
+- `Added` for new features.
+- `Changed` for changes in existing functionality.
+- `Deprecated` for soon-to-be removed features.
+- `Removed` for now removed features.
+- `Fixed` for any bugfixes.
+- `Security` in case of vulnerabilities.
+
+Keeping an `Unreleased` section at the top to track upcoming changes is
+preferable for maintaining the `CHANGELOG` file.
+[Learn more](https://keepachangelog.com/en/1.0.0/)
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+### 6.3. GitHub Wiki
+
+The GitHub Wiki will serve the purpose of documenting how the project works.
+Both from a technical point of view, as well as a user manual.
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+## 7. Issue Tracking and Closing
+
+In order to close an Issue, it has to have been developed. Which means that
+it's corresponding feature branch must have already been directly or indirectly
+merged with a PR to its base branch (see [Section 3.6](#36-pr-to-base-branch)).
+
+However this doesn't mean that the issue is fully complete necessarily. In the
+case of User Stories, Sub-Epics and Epics, they can be further tracked to be:
+
+1. **Module staged**: In a Release PR of a submodule repository.
+2. **Module released**: Released in a submodule repository.
+3. **Project staged**: In a Release PR of the project repository.
+4. **Project released**: Released in the project repository.
+
+A User Story, Sub-Epic or Epic should only be considered complete once it has
+been project released. And its status is determined by the lowest status any of
+its sub-issues has. So if an Epic is fully module released, except for a single
+User Story which is still only Module Staged, then the Epic itself is still
+Module Staged. Even if other User Stories and Sub-Epics are not.
 
 [Back to top &#x21e7;](#contribution-guidelines)
