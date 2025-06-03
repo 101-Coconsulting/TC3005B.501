@@ -249,6 +249,11 @@ etc..
                                     4.3.3. Tagging a Release
                                 </a>
                             </li>
+                            <li>
+                                <a href=#434-release-git-diagram>
+                                    4.3.4. Release `git` Diagram
+                                </a>
+                            </li>
                         </ul>
                     </details>
                 </li>
@@ -511,10 +516,67 @@ The base branch (the branch from which it is created) for the feature branch
 depends on the type of issue that it aims to address:
 
 - **Task Issue**: base branch is `development`.
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-foo
+        commit
+        commit
+    ```
+
 - **Sub-Task Issue**: base branch is the corresponding and pre-existing
   `[ issue number ]-task-[ task title]` parent task issue branch.
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-foo
+        commit
+        commit
+        branch 2-sub-task-bar
+        commit
+        commit
+    ```
+
 - **Chore**: base branch is either `main` or `development`, depending on the
   nature of the chore.
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-dev-chore
+        commit
+        commit
+        switch main
+        branch 2-task-main-chore
+        commit
+        commit
+    ```
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -609,6 +671,92 @@ development adjustments or once the development is finished and there are any
 conflicts that need to be fixed.
 [Learn more](https://git-scm.com/docs/gitworkflows#_topic_branches)
 
+The following are some examples as to how this could look like for the
+different issue types:
+
+- **Task Issue**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        branch 1-task-foo
+        commit
+        switch development
+        branch 2-task-bar
+        commit
+        switch development
+        merge 2-task-bar
+        switch 1-task-foo
+        merge development
+        commit
+    ```
+
+- **Sub-Task Issue**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-foo
+        commit
+        commit
+        branch 2-sub-task-bar
+        commit
+        switch 1-task-foo
+        branch 3-sub-task-baz
+        commit
+        switch 1-task-foo
+        merge 3-sub-task-baz
+        switch 2-sub-task-bar
+        merge 1-task-foo
+        commit
+    ```
+
+- **Chore**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        branch development
+        commit
+        branch 1-task-foo
+        commit
+        switch development
+        branch 2-task-dev-chore
+        commit
+        switch development
+        merge 1-task-foo
+        switch 2-task-dev-chore
+        merge development
+        commit
+        switch main
+        branch 3-task-main-chore
+        commit
+        switch main
+        merge development
+        switch 3-task-main-chore
+        merge main
+        commit
+    ```
+
 [Back to top &#x21e7;](#contribution-guidelines)
 
 ### 3.5. Test locally
@@ -626,6 +774,72 @@ application as a whole as part of the QA workflow.
 Once a feature has been thoroughly tested locally, a PR can be created into
 its corresponding base branch (see [Section 3.1](#31-creating-a-feature-branch))
 to integrate the feature to the current batch of features in testing.
+
+The following are examples of how this would look like for each issue type:
+
+- **Task Issue**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-foo
+        commit
+        switch development
+        merge 1-task-foo
+    ```
+
+- **Sub-Task Issue**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-foo
+        commit
+        branch 2-sub-task-bar
+        commit
+        switch 1-task-foo
+        merge 2-sub-task-bar
+    ```
+
+- **Chore**
+
+    ```mermaid
+    ---
+    config:
+        theme: base
+    ---
+    gitGraph
+        commit
+        commit
+        branch development
+        commit
+        commit
+        branch 1-task-dev-chore
+        commit
+        switch development
+        merge 1-task-dev-chore
+        switch main
+        branch 2-task-main-chore
+        commit
+        switch main
+        merge 2-task-main-chore
+    ```
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
@@ -736,6 +950,32 @@ release version in the format `vMAJOR.MINOR.PATCH` and a message indicating
 `Release vMAJOR.MINOR.PATCH`. These types of tags **must** exist **only** in
 the `main` branch, but alternate tags are allowed to track progress in the
 `development` and feature branches.
+
+[Back to top &#x21e7;](#contribution-guidelines)
+
+#### 4.3.4. Relese `git` Diagram
+
+The following is a diagram to show what releases should look like:
+
+```mermaid
+---
+config:
+    theme: base
+---
+gitGraph
+    commit
+    branch development
+    commit
+    commit
+    commit
+    switch main
+    merge development tag: "v0.1.0"
+    switch development
+    commit
+    commit
+    switch main
+    merge development tag: "v0.2.0"
+```
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
