@@ -685,11 +685,12 @@ also include an update to a `CHANGELOG` file [Learn more](https://keepachangelog
 #### 4.3.2. Merging a Release
 
 Once the release has been apropriately reviewed and approved, it should be
-merged into the `main` branch utilizing the squash and rebase merge method,
-with the message of the commit containing the descriptions of all the commits
-which are being incorporated into the project for the new release. This means
-that the commit history for the `main` branch should only contain specific
-release squash commits with all the changes introduced by each release.
+merged into the `main` branch utilizing the merge method, which creates a
+merge commit with the information of the release's PR. This means that the
+history of the `main` branch will mainly only contain the merge commits as
+first parents. However, still contain all of the commit history carried over
+from `development`. Which keeps the commit history complete but also clean when
+analyzed on a first-parent basis.
 
 [Back to top &#x21e7;](#contribution-guidelines)
 
